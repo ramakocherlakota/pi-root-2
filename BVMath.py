@@ -40,12 +40,15 @@ def subtract(x, y):
     y = trim(y)
 
     if x.length() < y.length():
-        x.pad_from_left(x.length() - y.length())
+        x.pad_from_left(y.length() - x.length())
     else:
-        y.pad_from_left(y.length() - x.length())
+        y.pad_from_left(x.length() - y.length())
           
+#    print("y=",y)
     comp = plus1(~y)
+#    print("comp=",comp)
     diff = add(x, comp)[1:]
+#    print("dif=",diff)
     return diff
 
 def add(x, y):
@@ -80,7 +83,7 @@ def sqrt(bv) :
     delta = subtract(bv[:2], bit01())
     state = SqrtState.SqrtState(root, tail, delta)
     while state.tail.length() > 1:
-#         print(state)
+#        print(state)
         state.step()
     return(state.root.shift_right(shift))
 
