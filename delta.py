@@ -14,4 +14,8 @@ for n in range(count) :
     delta = lim - u
     print(delta * prod)
 
-
+# bash-3.2$ python3 delta.py 2 20
+# ...
+# 2.467529296875
+# (sqrt 2.467529296875)
+# 1.5708371325108788
